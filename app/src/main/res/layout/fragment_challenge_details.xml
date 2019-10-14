@@ -8,46 +8,48 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
-    <ProgressBar
-            android:id="@+id/pbLoading"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/frameLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-    <TextView
-            android:id="@+id/txtLoadingMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pbLoading" />
-
-
     <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             app:layout_constraintDimensionRatio="4:3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtLooke"
-            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@+id/txtLookeName"
             android:layout_margin="8dp"
-            android:layout_marginTop="32dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="32dp"
             android:id="@+id/frameLayout">
         <VideoView
                 android:id="@+id/videoLooke"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
         />
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <ProgressBar
+                    android:id="@+id/pbLoading"
+                    android:layout_gravity="center_horizontal"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            />
+            <TextView
+                    android:textColor="@android:color/white"
+                    android:text="@string/message_video"
+                    android:id="@+id/txtLoadingMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            />
+        </LinearLayout>
+
     </FrameLayout>
     <TextView
             android:text="txtLooke"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtLooke" app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/txtLookeName" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="24dp"/>
     <Button
@@ -56,5 +58,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnPlay"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/frameLayout"/>
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/btnDownload"/>
+    <Button
+            android:text="Download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDownload" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnPlay" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

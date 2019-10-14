@@ -2,6 +2,7 @@
     <string name="app_name">ChallengeLooke</string>
 
     <string name="message_progress">Baixando informações...</string>
+    <string name="message_video">Carregando video...</string>
     <string name="error_no_connection">Sem conexão</string>
     <string name="error_load_looke_data">Falha ao obter lista de objetos</string>
 
